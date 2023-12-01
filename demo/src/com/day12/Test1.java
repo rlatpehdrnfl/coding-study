@@ -9,7 +9,7 @@ class Test {
 		System.out.println("a : " + a + " , b : " + b);
 
 	}
-//super는 클래스 안에서만 사용 가능
+//super는 클래스 안에서만 사용 가능(super : 부모 생성자 호출)
 }
 
 class Demo extends Test {

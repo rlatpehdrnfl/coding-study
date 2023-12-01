@@ -10,16 +10,17 @@ abstract class SortInt {
 	protected abstract void sorting();// 추상메소드
 
 	public void sort(int[] value) {
-		this.value = value;
+		this.value = value;// 여기서의 this는 SortInt클래스의 인스턴스 변수 value
 
-		sorting();
+		sorting();// 추상 메소드 호출
 	}
 
-	public int length() {// 배열 갯수 확인하는 메소드
+	public int length() {// 배열 갯수 확인하는 메소드 : 배열이 할당되지 않았다면 아래의 블록을 실행
+		// 배열이 할당되었다면 배열의 길이를 반환
 		if (value == null) {
 			return 0;// 0이 false
 		}
-		return value.length;// 배열은 length에 가로가 없음
+		return value.length;// 배열은 length에 괄호가 없음
 
 	}
 
@@ -36,7 +37,7 @@ abstract class SortInt {
 	}
 
 	// 자리바꿈
-	protected final void swap(int i, int j) {
+	protected final void swap(int i, int j) { // final :이 메소드는 하위 클래스에서 재정의 할 수 없음
 		int temp;
 		temp = value[i];
 		value[i] = value[j];
@@ -47,9 +48,9 @@ abstract class SortInt {
 	public void print() {
 
 		if (value == null) {
-			return;
+			return; // 현재 메소드를 종료하고 호출한 곳으로 돌아가는 역할
 		}
-		for (int su : value) {
+		for (int su : value) {// 배열의 각 요소를 'su'에 순서대로 대입하여 반복
 
 			System.out.printf("%4d", su);
 		}

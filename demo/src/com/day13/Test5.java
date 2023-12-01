@@ -76,7 +76,7 @@ public class Test5 {
 
 		Scanner sc = new Scanner(System.in);
 
-		Test5 t = new Test5();// 패킹을 쓰기 위해서는 객체를 생성해야 함/인스턴스 메소드기 때문
+		Test5 t = new Test5();// 패킹을 쓰기 위해서는 객체를 생성해야 함/스테틱이 아니기때문
 
 		System.out.println("1.사과 2.오렌지?");// 1,2
 		int n = sc.nextInt();

@@ -1,9 +1,9 @@
 package com.day12;
 
 //Singleton
-//객체를 계속해서 생상하는것이 아니라 하나의 객체만 생성하고 공유해서 사용
+//객체를 계속해서 생상하는것이 아니라 하나의 객체만 생성하고 공유해서 사용(방식)
 //calendar now = new getInstance();
-///스테틱
+///스테틱 - 구조를 만드는데 필요한 것
 
 class Sing {
 

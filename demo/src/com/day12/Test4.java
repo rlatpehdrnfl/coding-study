@@ -17,7 +17,7 @@ class Circ extends ShapeClass {
 	public void draw() {
 		System.out.println("원을 그린다...");
 
-	}// 메서드 무조건오버라이드 해야해
+	}// 메서드 무조건오버라이드 해야해(상속받아서 재정의해서 쓰려고)
 
 }
 

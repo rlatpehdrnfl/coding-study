@@ -39,15 +39,16 @@ public class Test2 {
 
 		// ob1.b
 
-		SuperTest ob2 = (SuperTest) ob1; // upcast - 암시적 형변환
+		SuperTest ob2 = (SuperTest) ob1; // upcast(상속관계에서만 실행) - 암시적 형변환
 
 		System.out.println(ob2.b);// 20
 
-		System.out.println("합: " + ob2.hap());// 오버라이드를 했다는 것은 절대 외부것을 쓰지 않겠다는 의도...???
-
+		System.out.println("합: " + ob2.hap());// 오버라이드를 했다는 것은 절대 외부것(부모것)을 쓰지 않겠다는 의도...
 		ob2.write();// 부모 / 자식이 write가 없기 때문에 부모것을 사용
 
-		// ob2.print();// 자식
+		// 메서드는 무조건 자기 자신것을 쓴다
+
+		// ob2.print();// 자식거라 부모가 자식거를 사용할 수 없다
 
 		((SubTest) ob2).print();// downcast
 

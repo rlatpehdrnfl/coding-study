@@ -16,7 +16,7 @@ class TestImpl implements Test {
 	public TestImpl() {
 	}
 
-	// 생성자 오버로딩
+	// 생성자 오버로딩 : 생성과 동시에 초기화
 	public TestImpl(String hak, String name, int kor, int eng) {
 		this.hak = hak;
 		this.name = name;
@@ -50,11 +50,11 @@ class TestImpl implements Test {
 		boolean flag = false;// 지역변수의 초기값은 쓰레기값
 
 		if (ob instanceof TestImpl) {// instanceof 가면을 벗김
-
+			// ob2
 			TestImpl t = (TestImpl) ob;// DOWNCAST ///t=ob2
 
 			if (this.hak.equals(t.hak) && t.name.equals(this.name)) {// this는 ob1, t = ob2
-				flag = true;//String의 .equals
+				flag = true;// String의 .equals 주소로 찾아가 저장되어잇는 데이터 비교
 			}
 
 		}
@@ -68,10 +68,10 @@ public class Test4 {
 
 	public static void main(String[] args) {
 
-		TestImpl ob1 = new TestImpl("111", "배수지", 80, 90);
+		TestImpl ob1 = new TestImpl("111", "배수지", 80, 90); // new는 무조건 객체생성
 		TestImpl ob2 = new TestImpl("111", "배수지", 100, 100);
 
-		if (ob1.equals(ob2)) {// Object꺼(.equals 는 ==와 같다) --> 내꺼  //내가만든 .equals
+		if (ob1.equals(ob2)) {// Object꺼(.equals 는 ==와 같다;주소비교) --> 내꺼 //내가만든 .equals
 			System.out.println("ob1과 ob2는 동일인물...");
 		} else {
 			System.out.println("ob1과 ob2는 안동일인물...");
