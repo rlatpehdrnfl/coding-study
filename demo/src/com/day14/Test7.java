@@ -10,11 +10,11 @@ public class Test7 {
 
 		Vector<String> v = new Vector<String>();
 
-		System.out.println("벡터의 초기 용량 " + v.capacity());// v.size 데이터의 개수
+		System.out.println("벡터의 초기 용량 " + v.capacity());// capacity(10), v.size 데이터의 개수(즉7)
 		// 무조건 기본적으로 10개를 만들어놓음. 후에 추가하면 계속 늘어남
 
-		for (String c : city) {
-			v.add(c);
+		for (String c : city) {// 확장 for문
+			v.add(c);// 요소 추가 / C가 V에 추가가 됨
 		}
 
 		for (String s : v) {
@@ -38,7 +38,7 @@ public class Test7 {
 		System.out.println();
 
 		// 검색
-		int index = v.indexOf("대구");
+		int index = v.indexOf("대구");// 대구의 index를 알려줌
 		if (index != -1) {// 데이터가 있으면
 			System.out.println("검색 성공: " + index);
 		} else {
@@ -66,7 +66,7 @@ public class Test7 {
 		}
 
 		// 용량 증가
-		for (int i = 1; i <= 20; i++) {
+		for (int i = 1; i <= 20; i++) {// 울산 뒤에 1~20까지 추가됨
 			v.add(Integer.toString(i));
 
 		}
@@ -92,7 +92,7 @@ public class Test7 {
 
 		// 빈공간 삭제
 		v.trimToSize();
-		System.out.println("벡터의 용량: " + v.capacity());
+		System.out.println("벡터의 용량: " + v.capacity());// capacity = size
 		System.out.println("데이터 갯수: " + v.size() + "개");
 
 		// 벡터내 모든 데이터 삭제

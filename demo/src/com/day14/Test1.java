@@ -18,7 +18,7 @@ class Outer1 {
 
 		public void write() {
 
-			System.out.println(a);// 왜 에러가 안날까?
+			System.out.println(a);// 왜 에러가 안날까? 스테틱이라 이미 메모리 공간에 올라가 있음
 			System.out.println(b);// 순서대로 거쳐와야 함
 			System.out.println(c);
 		}

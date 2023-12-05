@@ -31,7 +31,7 @@ public class Test6 {
 		}
 		System.out.println();
 
-		for (String s : v) {// 확장포문은 배열과 ~에서만 사용할 수 있다
+		for (String s : v) {// 확장포문은 배열에서 사용할 수 있다
 			System.out.println(s + " ");
 		}
 		System.out.println();
@@ -39,7 +39,7 @@ public class Test6 {
 		// 반복자 (인터페이스는 저장소로도 쓰임) - 외우자
 		Iterator<String> it = v.iterator();
 
-		while (it.hasNext()) {
+		while (it.hasNext()) {// hasNext : 데이터 있어?
 
 			str = it.next();
 			System.out.print(str + " ");

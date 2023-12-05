@@ -3,10 +3,10 @@ package com.day14;
 import java.util.Vector;
 
 //Collection Framework(방법들) : 인터페이스(저장공간으로도 사용된다)	
-//메소드만 있거나~
+//메소드만 있다
 //List, Vector, Set, Map, LinkedList, HashSet, TreeSet, Hashtable
 
-// 배열
+// 배열의 단점
 // 갯수가 정해져있음
 //갯수 늘리거나 줄이거나 하지 못함
 
@@ -20,7 +20,7 @@ public class Test5 {
 		// vector는 기본값이 object
 		Vector v = new Vector();
 
-		v.add("서울");// upcast
+		v.add("서울");// upcast(자식이 부모한테 들어간 것)
 		v.add(30);
 		// 자료형은 부모가 없음. Inteager값이 들어간 것
 		v.add('c');
