@@ -1,0 +1,132 @@
+package com.naver;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+public class NaverImpl implements Naver {
+
+	private List<NaverVO> lists = new ArrayList<NaverVO>();
+
+	Scanner sc = new Scanner(System.in);
+
+	class MyAuthenticator {
+
+		public void inputFormat(String str) throws Exception {
+
+			// 검증 조건
+			// 1. 사용자가 입력한 문자열이 5~10자이내인지 검사
+			// 2. 영문자(대소문자 구분x),숫자 혼합입력
+
+			if (str.length() < 8 || str.length() > 15) {
+				throw new Exception("문자열의 길이는 8~15자입니다");
+			}
+
+			int eng = 0;
+			int num = 0;
+
+			// str = "a1b2c3"
+			for (int i = 0; i < str.length(); i++) {
+
+				char ch = str.charAt(i);
+				if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+					eng++;
+
+				} else if (ch >= '0' && ch <= '9')
+					num++;
+
+			}
+
+			if (eng == 0 || num == 0) {
+				throw new Exception("영문자, 숫자 혼용만 가능합니다");
+			}
+		}
+
+	}
+
+	@Override
+	public String input() {
+
+		int result = 0;
+
+		NaverVO vo = new NaverVO();
+
+		try {
+			System.out.println("아이디?");
+
+			vo.setID(sc.next());
+
+			MyAuthenticator auth = new MyAuthenticator();
+
+			auth.inputFormat(vo.getID());
+
+			System.out.println("비밀번호?");
+			vo.setPW(sc.next());
+
+			System.out.println("비밀번호 확인?");
+			String PW2 = sc.next();
+
+			if (!vo.getPW().equals(PW2)) {
+				throw new Exception("비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return "";
+		}
+
+		System.out.println("이름?");
+		vo.setName(sc.next());
+
+		System.out.println("성별?");
+		vo.setGender(sc.next());
+
+		System.out.println("생일?");
+		vo.setBirth(sc.next());
+
+		System.out.println("이메일?");
+		vo.setEmail(sc.next());
+
+		System.out.println("전화번호?");
+		vo.setTel(sc.next());
+
+		lists.add(vo);
+		return null;
+	}
+
+	@Override
+	public void print() {
+
+		Iterator<NaverVO> it = lists.iterator();
+
+		while (it.hasNext()) {
+
+			NaverVO vo = it.next();
+
+			System.out.println(vo.toString());
+		}
+	}
+
+	@Override
+	public void search() {
+		System.out.println("검색할 아이디?");
+		String searchID = sc.next();
+
+		Iterator<NaverVO> it = lists.iterator();
+
+		while (it.hasNext()) {
+
+			NaverVO vo = it.next();
+
+			if (vo.getID().equals(searchID)) {
+				System.out.println(vo.toString());
+
+			}
+
+		}
+
+	}
+
+}

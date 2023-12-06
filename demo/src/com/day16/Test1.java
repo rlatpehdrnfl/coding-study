@@ -23,7 +23,7 @@ public class Test1 {
 
 		str.push("서울");
 		str.push("부산");
-		str.push("대구");
+		str.add("대구");
 
 		System.out.println(string);
 
