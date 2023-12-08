@@ -43,48 +43,86 @@ public class NaverImpl implements Naver {
 			}
 		}
 
+		public void passwordFormat(String str) throws Exception {
+
+			String str2 = "";
+			Scanner sc = new Scanner(System.in);
+
+			System.out.println("비밀번호 재확인");
+			str2 = sc.next();
+
+			if (!str.equals(str2)) {
+				throw new Exception("비밀번호 입력 실패");
+			}
+
+			// 왜 이거 안되는지 알아오기
+		}
+
 	}
 
 	@Override
-	public String input() {
-
-		int result = 0;
+	public void input() {
 
 		NaverVO vo = new NaverVO();
+		MyAuthenticator auth = new MyAuthenticator();
+
+		while (true) {
+			try {
+				System.out.println("아이디?");
+				vo.setID(sc.next());
+				auth.inputFormat(vo.getID());
+				break;
+
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+
+		while (true) {
+			try {
+
+				System.out.println("비밀번호?");
+				vo.setPW(sc.next());
+
+				auth.passwordFormat(vo.getPW());
+				break;
+
+			} catch (Exception e) {
+
+			}
+		}
 
 		try {
-			System.out.println("아이디?");
-			vo.setID(sc.next());
-
-			MyAuthenticator auth = new MyAuthenticator();
-
-			auth.inputFormat(vo.getID());
-
-			System.out.println("비밀번호?");
-			vo.setPW(sc.next());
-
-			System.out.println("비밀번호 확인?");
-			String PW2 = sc.next();
-
-			if (!vo.getPW().equals(PW2)) {
-				throw new Exception("비밀번호와 확인 비밀번호가 일치하지 않습니다.");
-			}
 
 			System.out.println("이름?");
-			vo.setName(sc.next());
+			String name = sc.next();
 
-			String name = "";
 			if (name.length() < 2 || name.length() > 10) {
 				throw new Exception("이름의 길이는 2~10자입니다");
 			}
 
 		} catch (Exception e) {
-			System.out.println(e.toString());
-			return "";
+
 		}
 
-		System.out.println("성별?");
-		vo.setGender(sc.next());
+		try {
+
+			System.out.println("성별?");
+			String gender = sc.next();
+			vo.setGender(gender);
+
+			char ch = gender.charAt(0);
+
+			if (ch == 'w' || ch == 'W') {
+				System.out.println("여자입니다");
+			} else {
+				System.out.println("남자입니다");
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+
+		}
 
 		System.out.println("생일?");
 		vo.setBirth(sc.next());
@@ -96,7 +134,7 @@ public class NaverImpl implements Naver {
 		vo.setTel(sc.next());
 
 		lists.add(vo);
-		return null;
+
 	}
 
 	@Override
