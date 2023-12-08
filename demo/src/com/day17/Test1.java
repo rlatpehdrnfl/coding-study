@@ -1,6 +1,6 @@
 package com.day17;
 
-class MyThread1 extends Thread {
+class MyThread1 extends Thread {// 스레드 구현하는 법1. 2.Runnable Interface
 
 	private int num;
 	private String name;

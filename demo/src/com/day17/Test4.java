@@ -32,9 +32,9 @@ public class Test4 {
 		System.out.println("NOR:" + Thread.NORM_PRIORITY);// 5
 		System.out.println("MAX:" + Thread.MAX_PRIORITY);// 10
 
-		System.out.println(ob1.getPriority());
-		System.out.println(ob2.getPriority());
-		System.out.println(ob3.getPriority());
+		System.out.println(ob1.getPriority());// 5
+		System.out.println(ob2.getPriority());// 5
+		System.out.println(ob3.getPriority());// 5
 
 		ob1.setPriority(Thread.MIN_PRIORITY);// 1
 		ob2.setPriority(Thread.NORM_PRIORITY);// 5

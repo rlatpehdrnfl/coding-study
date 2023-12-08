@@ -1,3 +1,4 @@
+
 package com.day17;
 
 import java.util.Random;
@@ -20,16 +21,30 @@ public class TestThread extends Thread {
 		int random[] = new int[num];
 		int n = 0;
 
-		while (n < num) {
+//		while (n < num) {
+//			random[n] = rd.nextInt(name.length);
+//			for (int i = 0; i < n; i++) {
+//
+//				if (random[i] == random[n]) {
+//					n--;
+//					break;
+//				}
+//			}
+//			n++;
+//		}
+
+		for (n = 0; n < num; n++) {
 			random[n] = rd.nextInt(name.length);
+
 			for (int i = 0; i < n; i++) {
 
 				if (random[i] == random[n]) {
+
 					n--;
-					break;
+
 				}
 			}
-			n++;
+
 		}
 
 		for (int i = 0; i < random.length; i++) {

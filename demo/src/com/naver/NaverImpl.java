@@ -54,7 +54,6 @@ public class NaverImpl implements Naver {
 
 		try {
 			System.out.println("아이디?");
-
 			vo.setID(sc.next());
 
 			MyAuthenticator auth = new MyAuthenticator();
@@ -69,16 +68,20 @@ public class NaverImpl implements Naver {
 
 			if (!vo.getPW().equals(PW2)) {
 				throw new Exception("비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+			}
 
+			System.out.println("이름?");
+			vo.setName(sc.next());
+
+			String name = "";
+			if (name.length() < 2 || name.length() > 10) {
+				throw new Exception("이름의 길이는 2~10자입니다");
 			}
 
 		} catch (Exception e) {
 			System.out.println(e.toString());
 			return "";
 		}
-
-		System.out.println("이름?");
-		vo.setName(sc.next());
 
 		System.out.println("성별?");
 		vo.setGender(sc.next());
