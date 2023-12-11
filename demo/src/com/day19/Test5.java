@@ -124,7 +124,7 @@ public class Test5 extends Frame implements ActionListener {
 
 	}// actionPerform..end
 
-	class KeyHandler extends KeyAdapter {
+	class KeyHandler extends KeyAdapter {// 엔터쳤을때 감지
 
 		@Override
 		public void keyPressed(KeyEvent e) {

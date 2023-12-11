@@ -15,7 +15,7 @@ public class Tset1 extends Frame implements WindowListener {
 		setSize(200, 300);
 		setBackground(new Color(100, 205, 255));
 
-		addWindowListener(this);
+		addWindowListener(this);// 이벤트 감지 감시카메라
 
 		setVisible(true);
 
