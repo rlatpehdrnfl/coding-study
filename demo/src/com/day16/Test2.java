@@ -2,6 +2,7 @@ package com.day16;
 
 //Collection은 기본 데이터 타입이 object
 //Collection의 구조가 어떻게 만들어져있는지
+
 class Box<T> {
 
 	private T t;

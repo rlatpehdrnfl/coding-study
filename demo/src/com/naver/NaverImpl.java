@@ -55,7 +55,6 @@ public class NaverImpl implements Naver {
 				throw new Exception("비밀번호 입력 실패");
 			}
 
-			// 왜 이거 안되는지 알아오기
 		}
 
 	}
@@ -85,10 +84,12 @@ public class NaverImpl implements Naver {
 				vo.setPW(sc.next());
 
 				auth.passwordFormat(vo.getPW());
+
 				break;
 
 			} catch (Exception e) {
 
+				System.out.println(e.toString());
 			}
 		}
 

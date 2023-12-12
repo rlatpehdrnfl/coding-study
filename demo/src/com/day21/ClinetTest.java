@@ -1,4 +1,4 @@
-package com.day20;
+package com.day21;
 
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -23,7 +23,7 @@ public class ClinetTest extends Frame implements ActionListener, Runnable {
 	private TextField tf = new TextField();
 	private Socket sc = null;
 	private int port = 7777;
-	private String host = "192.168.16.0"; // localhost 네트워크에서 영어의 ME와 같음
+	private String host = "127.0.0.1"; // localhost 네트워크에서 영어의 ME와 같음
 
 	public ClinetTest() {
 		add(ta, BorderLayout.CENTER);
@@ -100,9 +100,9 @@ public class ClinetTest extends Frame implements ActionListener, Runnable {
 
 			PrintWriter pw = new PrintWriter(os, true);// flush : 자동으로 buffer칸이 다 차지 않아도 내보냄
 
-			pw.println("김세빈] " + str);// client에 보내는 메세지
+			pw.println("클라이언트] " + str);// client에 보내는 메세지
 
-			ta.append("\r\n김세빈] " + str);// 자신의 창에 띄우는 것
+			ta.append("\r\n클라이언트] " + str);// 자신의 창에 띄우는 것
 			tf.setText("");
 			tf.requestFocus();
 

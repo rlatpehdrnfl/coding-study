@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<booklist>
+	<book kind = "컴퓨터">
+		<title>JAVA	</title>
+		<author>배수지</author>
+		<price>1000</price>
+	</book>
+	<book kind = "소설">
+		<title>수지의 인생</title>
+		<author>수지친구</author>
+		<price>2000</price>
+	</book>
+	<book kind = "음악">
+		<title>베토벤</title>
+		<author>후대</author>
+		<price>13000</price>
+	</book>
+</booklist>
+
+

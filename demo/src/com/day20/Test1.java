@@ -28,6 +28,7 @@ public class Test1 extends Frame {
 		addMouseMotionListener(new MouseMotionHandler());
 
 		setBackground(new Color(150, 150, 150));// 배경
+
 		setForeground(new Color(0, 0, 255));// 글자색
 
 		addWindowListener(new WindowAdapter() {
