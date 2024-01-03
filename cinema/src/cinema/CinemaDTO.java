@@ -2,7 +2,7 @@ package cinema;
 
 public class CinemaDTO {
 
-	// 회원가입 정보
+	// 회원가입정보
 	private String id;
 	private String pw;
 	private String name;
@@ -63,12 +63,36 @@ public class CinemaDTO {
 		this.tel = tel;
 	}
 
+	public int getMovieNo() {
+		return movieNo;
+	}
+
+	public void setMovieNo(int movieNo) {
+		this.movieNo = movieNo;
+	}
+
 	public String getMovieName() {
 		return movieName;
 	}
 
 	public void setMovieName(String movieName) {
 		this.movieName = movieName;
+	}
+
+	public String getMovieGenre() {
+		return movieGenre;
+	}
+
+	public void setMovieGenre(String movieGenre) {
+		this.movieGenre = movieGenre;
+	}
+
+	public String getMovieTime() {
+		return movieTime;
+	}
+
+	public void setMovieTime(String movieTime) {
+		this.movieTime = movieTime;
 	}
 
 	public String getMovieSub() {
@@ -93,30 +117,6 @@ public class CinemaDTO {
 
 	public void setNowSeats(int nowSeats) {
 		this.nowSeats = nowSeats;
-	}
-
-	public int getMovieNo() {
-		return movieNo;
-	}
-
-	public void setMovieNo(int movieNo) {
-		this.movieNo = movieNo;
-	}
-
-	public String getMovieGenre() {
-		return movieGenre;
-	}
-
-	public void setMovieGenre(String movieGenre) {
-		this.movieGenre = movieGenre;
-	}
-
-	public String getMovieTime() {
-		return movieTime;
-	}
-
-	public void setMovieTime(String movieTime) {
-		this.movieTime = movieTime;
 	}
 
 	public String getCheckMoive() {

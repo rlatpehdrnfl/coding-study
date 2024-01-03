@@ -2,12 +2,16 @@ package cinema;
 
 import java.util.Scanner;
 
+import member.Member;
+import movie.Movie;
+
 public class CinemaMain {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
-		Cinema ob = new Cinema();
+		Member member = new Member();
+		Movie movie = new Movie();
+
 		int ch;
 
 		while (true) {
@@ -23,20 +27,21 @@ public class CinemaMain {
 				System.out.println("      " + "$$/      $$/  $$$$$$/      $/     $$$$$$/ $$$$$$$$/ ");
 				System.out.println("                                                    ");
 				System.out.println("   =========================================================");
-				System.out.println("   |        1.ë¡œê·¸ì¸ 2.íšŒì›ê°€ì… 3.ìƒì˜ì¤‘ì˜í™” 4.ì¢…ë£Œ        |");
+				System.out.println("   |        1.·Î±×ÀÎ 2.È¸¿ø°¡ÀÔ 3.»ó¿µÁß¿µÈ­ 4.Á¾·á        |");
 				System.out.println("   =========================================================");
-				System.out.print("   â–¶ ");
+				System.out.print("   ¢º ");
 				ch = sc.nextInt();
 			} while (ch < 1);
+
 			switch (ch) {
 			case 1:
-				ob.login();
+				member.login();
 				break;
 			case 2:
-				ob.join();
+				member.join();
 				break;
 			case 3:
-				ob.playMoive();
+				movie.info();
 				break;
 			case 4:
 				System.out.println();
@@ -49,12 +54,13 @@ public class CinemaMain {
 				System.out.println("    #####    #####      ##     ######     ##       ##    ");
 
 				System.out.println();
-				System.out.println("ì˜ˆë§¤ ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+				System.out.println("    ¿¹¸Å ½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
 				System.exit(0);
 			default:
-				System.out.println("ì˜¬ë°”ë¥¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+				System.out.println("    ¿Ã¹Ù¸¥ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 				break;
 			}
+
 		}
 
 	}
